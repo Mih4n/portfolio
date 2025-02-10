@@ -1,0 +1,123 @@
+@import "./base.less";
+
+@font-face {
+    font-family: Inconsolate;
+    src: url("../fonts/Inconsolata-VariableFont_wdth_wght.ttf");
+    font-style: normal;
+    font-size: inherit;
+    font-weight: inherit;
+    font-optical-sizing: auto;
+}
+
+@font-face {
+    font-family: jetBrains-mono;
+    src: url("../fonts/JetBrainsMono-VariableFont_wght.ttf");
+    font-style: normal;
+    font-size: inherit;
+    font-weight: inherit;
+    font-optical-sizing: auto;
+}
+
+* {
+    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+html.dark {
+    --bg: #282828;
+    --fg0: #FBF1C7;
+    --bg-0h: #1D2021;
+
+    --blue: #458588;
+    --aqua: #689D6A;
+    --green: #98971A;
+    --yellow: #D79921;
+
+    --blue-white: #83A598;
+}
+
+html {
+    --bg: #fbf1c7;
+    --fg0: #282828;
+    --bg-0h: #f9f5d7;
+
+    --blue: #458588;
+    --aqua: #689D6A;
+    --green: #98971A;
+    --yellow: #D79921;
+
+    --blue-white: #076678;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+input,
+span,
+textarea
+{
+  font-weight: 700;
+  font-family: jetBrains-mono;
+  color: var(--fg0);
+}
+
+.jetbrains-mono {
+    font-family: jetBrains-mono;
+    color: var(--fg0);
+    font-weight: 700;
+}
+.incontsolate {
+    font-weight: 700;
+    font-family: Inconsolate;
+    color: var(--fg0);
+}
+
+.bg-blue {
+    background-color: var(--blue);
+}
+
+.bg-blue-white {
+    background-color: var(--blue-white);
+}
+
+.bg-aqua {  
+    background-color: var(--aqua);
+}
+
+.bg-green {
+    background-color: var(--green);
+}
+
+.bg-yellow {
+    background-color: var(--yellow);
+}
+
+.bg {
+    background-color: var(--bg);
+}
+
+.bg-0h {
+    background-color: var(--bg-0h);
+}
+
+.text-bg-0h {
+    color: var(--bg-0h);
+}
+
+.flex {
+    display: flex;
+}
+
+.line-title {
+    width: 100%;
+    display: flex;
+    margin: auto auto auto 165px;
+    font-weight: 500;
+    font-size: 18px;
+}
