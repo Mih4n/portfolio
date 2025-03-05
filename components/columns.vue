@@ -9,10 +9,27 @@
     </div>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .columns {
     width: 100%;
     height: 800px;
+    &:hover {
+        ::-webkit-scrollbar-thumb {
+            background: #665c5450;
+        }
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #665c54;
+    }
 }
 
 .left {

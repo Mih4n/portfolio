@@ -1,15 +1,16 @@
 <template>
-    <Lines>
-        <vue-writer>
-            <pre v-html="code" />
-        </vue-writer>
-    </Lines>
+    <!-- <template v-html="html"></template> -->
 </template>
 
 <script setup lang="ts">
-defineProps({
-    code: String
-})
+// import Prism from 'prismjs'
+// // import loadLanguages from 'prismjs/components/'
+// // loadLanguages(['csharp']);
+// const props = defineProps({
+//     code: String
+// })
+
+// const html = Prism.highlight(props.code ?? "", Prism.languages.csharp, 'csharp');
 </script>
 
 <style lang="less" scoped>

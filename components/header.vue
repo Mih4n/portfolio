@@ -21,9 +21,13 @@
     </header>
 </template>
 
-<style lang="less" scoped>
+<style lang="less">
+html {
+    --header-height: 100px;
+    scroll-padding-top: var(--header-height);
+}
 header {
-    height: 100px;
+    height: var(--header-height);
     width: 100vw;
 
     top: 0;
@@ -41,10 +45,12 @@ header {
         height: 100%;
         width: 100%;
 
-        padding: 0 25px 0 165px;
+        padding: 0 165px 0 165px;
         margin-bottom: 20px;
 
         display: flex;
+        position: relative;
+
         .content{
             width: 100%;
             display: flex;
@@ -74,13 +80,13 @@ header {
                 }
             }
         }
-    }
-}
-
-.mode {
-    margin-left: 120px;
-    * {
-        fill: var(--fg0);
+        .mode {
+            right: -140px;
+            position: absolute;
+            * {
+                fill: var(--fg0);
+            }
+        }
     }
 }
 

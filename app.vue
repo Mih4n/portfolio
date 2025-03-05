@@ -2,12 +2,7 @@
   <Header />
   <Columns>
     <template #left>
-      <Lines>
-        <ContentDoc 
-          class="content jetbrains-mono"
-          path="/about"
-        />
-      </Lines>
+      <Code code="" />
     </template>
   </Columns>
   <Contacts />
