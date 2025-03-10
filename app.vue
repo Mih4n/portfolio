@@ -2,7 +2,7 @@
   <Header />
   <Columns>
     <template #left>
-      <Code code="" />
+      <ContentDoc path="/about" />
     </template>
   </Columns>
   <Contacts />
@@ -20,11 +20,11 @@ import "@/assets/scripts/prism.js";
   height: 100px;
   background-color: red;
 }
-.content {
+/* .content {
   * {
     font-size: 24px;
     line-height: 32px;
     margin: 0;
   }
-}
+} */
 </style>

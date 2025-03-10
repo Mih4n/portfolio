@@ -12,7 +12,7 @@
 <style lang="less" scoped>
 .columns {
     width: 100%;
-    height: 800px;
+    height: fit-content;
     &:hover {
         ::-webkit-scrollbar-thumb {
             background: #665c5450;

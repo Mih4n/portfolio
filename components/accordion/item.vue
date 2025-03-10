@@ -47,6 +47,7 @@ const open = () => {
 }
 
 .accordion-item-content-wrapper {
+  overflow: hidden;
   cursor: pointer;
   display: grid;
   align-items: flex-start;
