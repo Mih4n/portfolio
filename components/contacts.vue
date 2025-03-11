@@ -1,7 +1,7 @@
 <template>
     <div class="bg-yellow flex" id="contacts" style="height: 100px; width: 100%;">
-        <div class="line-title text-bg-0h contacts">
-            <h3>Contacts:</h3>
+        <div class="line-title contacts">
+            <h3 class="text-bg-0h">Contacts:</h3>
             <a class="link h-underline-a">
                 <Icon name="linkedIn" />
             </a>
@@ -18,7 +18,6 @@
 <style lang="less">
 #contacts {
     h3 {
-        color: inherit;
         margin: auto 0;
     }
     .link {

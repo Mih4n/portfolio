@@ -2,7 +2,7 @@
     <div 
         class="mode-switch"
         :class="{ 'light': !mode, 'dark': mode }"
-        @click="toggleDark()"
+        @click="toggleTheme()"
     >
         <div class="icon-wrapper">
             <Icon name="solar" class="solar" />
@@ -11,9 +11,23 @@
     </div>
 </template>
 
-<script setup lang="ts"> 
-const mode = useDark({ disableTransition: false })
-const toggleDark = useToggle(mode)
+<script setup lang="ts">
+const mode = useDark({ disableTransition: false });
+const toggleDark = useToggle(mode);
+
+const toggleTheme = () => {
+    document.querySelectorAll("*").forEach(el => el.classList.add("switching"));
+    console.log(document.querySelectorAll("*"))
+    toggleDark();
+
+    const removeSwitchingClass = () => {
+        document.body.classList.remove("switching");
+        document.querySelectorAll("*").forEach(el => el.classList.remove("switching"));
+        document.body.removeEventListener("transitionend", removeSwitchingClass);
+    };
+
+    document.body.addEventListener("transitionend", removeSwitchingClass);
+};
 </script>
 
 <style lang="less" scoped>
@@ -27,27 +41,29 @@ const toggleDark = useToggle(mode)
     cursor: pointer;
     overflow: hidden;
     position: relative;
-}
-.icon-wrapper {
-    height: 33px;
-}
-.moon, .solar {
-  position: absolute;
-  width: 33px;
-  height: 33px;
-  top: 50%;
-  left: 0;
-  transform: translateY(200%);
-  transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
-}
-.mode-switch.dark {
-    .solar {
-        transform: translateY(-50%);
+
+    .icon-wrapper {
+        height: 33px;
     }
-}
-.mode-switch.light {
-    .moon {
-        transform: translateY(-50%);
+    .moon, .solar {
+        position: absolute;
+        width: 33px;
+        height: 33px;
+        top: 50%;
+        left: 0;
+        transform: translateY(200%);
+        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+    }
+
+    &.dark {
+        .solar {
+            transform: translateY(-50%);
+        }
+    }
+    &.light {
+        .moon {
+            transform: translateY(-50%);
+        }
     }
 }
 </style>
