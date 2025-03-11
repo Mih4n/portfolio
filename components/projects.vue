@@ -3,7 +3,7 @@
         <AccordionItem>
             <template #trigger>
                 <AccordionTrigger 
-                    class="bg-blue"
+                    class="bg-blue svg-fg0"
                 >
                     <h3>Projects</h3>
                 </AccordionTrigger>
