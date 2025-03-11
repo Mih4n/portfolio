@@ -2,11 +2,11 @@
     <Accordion id="projects">
         <AccordionItem>
             <template #trigger>
-                <div class="projects bg-blue">
-                    <div class="line-title">
-                        <h3>Projects</h3>
-                    </div>
-                </div>
+                <AccordionTrigger 
+                    class="bg-blue"
+                >
+                    <h3>Projects</h3>
+                </AccordionTrigger>
             </template>
             <template #content>
                 <Accordion>
@@ -15,11 +15,12 @@
                         :key="project.path"
                     >
                         <template #trigger>
-                            <div class="projects bg-blue-white" :class="{ 'bg-blue-white-dark': index % 2 === 1 }">
-                                <div class="line-title">
-                                    <h3 class="text-bg-0h">{{ project.title }}</h3>
-                                </div>
-                            </div>
+                            <AccordionTrigger
+                                class="bg-blue-white svg-bg-0h" 
+                                :class="{ 'bg-blue-white-dark': index % 2 === 1 }"
+                            >
+                                <h3 class="text-bg-0h">{{ project.title }}</h3>
+                            </AccordionTrigger>
                         </template>
                         <template #content>
                             <Columns>
@@ -36,13 +37,14 @@
                 </Accordion>
             </template>
             <template #footer>
-                <div class="projects bg-blue"></div>
+                <div class="a-trigger bg-blue"></div>
             </template>
         </AccordionItem>
     </Accordion>
 </template>
 
 <script setup lang="ts">
+import { AccordionTrigger } from '#components';
 import  Prism  from '~/composables/usePrism';
 const { data: projects } = await useAsyncData("projects", () => {
   return queryCollection("projects").all()
@@ -51,14 +53,3 @@ onMounted(() => {
     Prism.highlightAll();
 })
 </script>
-
-<style lang="less" scoped>
-.projects {
-    width: 100%;
-    height: 75px;
-    display: flex;
-}
-.bg-blue-white-dark {
-    background-color: antiquewhite;
-}
-</style>

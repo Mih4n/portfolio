@@ -83,7 +83,7 @@ header {
         .mode {
             right: -140px;
             position: absolute;
-            * {
+            path {
                 fill: var(--fg0);
             }
         }

@@ -9,7 +9,7 @@
     </div>
 </template>
 
-<style lang="less" scoped>
+<style lang="less">
 @import "/assets/css/mobile.less";
 .columns {
     width: 100%;
@@ -21,16 +21,15 @@
     });
 
     height: fit-content;
-}
+    .left {
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+    }
 
-.left {
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-}
-
-.right {    
-    width: 100%;
-    height: 100%;
+    .right {    
+        width: 100%;
+        height: 100%;
+    }
 }
 </style>

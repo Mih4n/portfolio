@@ -1,15 +1,15 @@
 <template>
-    <li class="accordion-item">
+    <li 
+      class="accordion-item"
+      :class="{ 'open': visible }"
+    >
       <div 
         class="accordion-trigger"
         @click="open"
       >
         <slot name="trigger" :visible="visible"></slot>
       </div>
-      <div 
-        class="accordion-item-content-wrapper"
-        :class="{ 'open': visible }"
-      >
+      <div class="accordion-item-content-wrapper">
         <div class="accordion-item-content">
           <slot name="content"></slot>
         </div>
@@ -48,7 +48,6 @@ const open = () => {
 
 .accordion-item-content-wrapper {
   overflow: hidden;
-  cursor: pointer;
   display: grid;
   align-items: flex-start;
   grid-template-rows: 0fr;
@@ -59,7 +58,7 @@ const open = () => {
   overflow: hidden;
 }
 
-.accordion-item-content-wrapper.open {
+.accordion-item.open > .accordion-item-content-wrapper {
   grid-template-rows: 1fr;
 }
 </style>

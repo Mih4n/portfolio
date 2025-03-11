@@ -21,7 +21,7 @@ const updateLineCount = () => {
 onMounted(updateLineCount);
 </script>
   
-<style scoped>
+<style lang="less" scoped>
 .container {
   display: flex;
   width: 100%;
@@ -45,11 +45,6 @@ onMounted(updateLineCount);
 .content {
   padding-left: 85px;
   overflow: auto;
-  * {
-    font-size: 24px;
-    line-height: 32px;
-    margin: 0;
-  }
 }
 </style>
   

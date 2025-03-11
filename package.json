@@ -13,13 +13,11 @@
     "@nuxt/content": "^3.2.1",
     "@pinia/nuxt": "^0.7.0",
     "@vueuse/nuxt": "^11.2.0",
-    "@wdns/vue-code-block": "^2.3.5",
     "nuxt": "^3.14.159",
     "nuxt-svgo-loader": "^0.4.1",
     "prismjs": "^1.29.0",
     "vue": "latest",
-    "vue-router": "latest",
-    "vuejs-code-block": "^1.0.1"
+    "vue-router": "latest"
   },
   "overrides": {
     "vue": "latest"
