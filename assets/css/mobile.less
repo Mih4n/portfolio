@@ -1,0 +1,23 @@
+#mobile {
+
+    .orientation(@rules) {
+        @media screen and (orientation: portrait) {
+            @rules();
+        }
+    }
+
+    .not-orientation(@rules) {
+        @media screen and (orientation: landscape) {
+            @rules();
+        }
+    }
+
+    .all(@rules) {
+        @media (pointer:none) {
+            @rules();
+        }
+        @media screen and (orientation: portrait) {
+            @rules();
+        }
+    }
+}

@@ -36,7 +36,7 @@ onMounted(updateLineCount);
 
 .line-numbers span {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 32px;
   text-align: right;
   color: var(--bg0-h);

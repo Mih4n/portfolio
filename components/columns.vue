@@ -10,36 +10,27 @@
 </template>
 
 <style lang="less" scoped>
+@import "/assets/css/mobile.less";
 .columns {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    #mobile.orientation({
+        flex-direction: column;
+    });
+
     height: fit-content;
-    &:hover {
-        ::-webkit-scrollbar-thumb {
-            background: #665c5450;
-        }
-    }
-
-    ::-webkit-scrollbar {
-        width: 12px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: #665c54;
-    }
 }
 
 .left {
-    width: 50%;
+    width: 100%;
     height: 100%;
     overflow: scroll;
 }
 
 .right {    
-    width: 50%;
+    width: 100%;
     height: 100%;
 }
 </style>

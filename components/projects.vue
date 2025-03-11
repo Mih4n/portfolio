@@ -11,11 +11,11 @@
             <template #content>
                 <Accordion>
                     <AccordionItem
-                        v-for="project in projects"
+                        v-for="(project, index) in projects"
                         :key="project.path"
                     >
                         <template #trigger>
-                            <div class="projects bg-blue-white">
+                            <div class="projects bg-blue-white" :class="{ 'bg-blue-white-dark': index % 2 === 1 }">
                                 <div class="line-title">
                                     <h3 class="text-bg-0h">{{ project.title }}</h3>
                                 </div>
@@ -24,7 +24,9 @@
                         <template #content>
                             <Columns>
                                 <template #left>
-                                    <ContentRenderer :value="project" />
+                                    <Lines>
+                                        <ContentRenderer :value="project" />
+                                    </Lines>
                                 </template>
                                 <template #right>
                                 </template>
@@ -55,5 +57,8 @@ onMounted(() => {
     width: 100%;
     height: 75px;
     display: flex;
+}
+.bg-blue-white-dark {
+    background-color: antiquewhite;
 }
 </style>
