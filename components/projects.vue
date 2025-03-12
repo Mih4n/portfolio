@@ -17,7 +17,7 @@
                         <template #trigger>
                             <AccordionTrigger
                                 class="bg-blue-white svg-bg-0h" 
-                                :class="{ 'bg-blue-white-dark': index % 2 === 1 }"
+                                :class="{ 'bg-aqua': index % 2 === 1 }"
                             >
                                 <h3 class="text-bg-0h">{{ project.title }}</h3>
                             </AccordionTrigger>

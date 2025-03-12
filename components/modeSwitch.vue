@@ -16,6 +16,7 @@ const mode = useDark({ disableTransition: false });
 const toggleDark = useToggle(mode);
 
 const toggleTheme = () => {
+    document.body.classList.add("switching")
     document.querySelectorAll("*").forEach(el => el.classList.add("switching"));
     console.log(document.querySelectorAll("*"))
     toggleDark();
