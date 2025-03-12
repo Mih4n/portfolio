@@ -21,7 +21,7 @@
     }
     .line-title {
         width: fit-content;
-        margin: auto 0 auto 165px;
+        margin: auto 0 auto var(--title-pudding);
     }
 }
 .open {

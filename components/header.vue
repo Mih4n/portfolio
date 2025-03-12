@@ -22,6 +22,7 @@
 </template>
 
 <style lang="less">
+@import "/assets/css/mobile.less";
 html {
     --header-height: 100px;
     scroll-padding-top: var(--header-height);
@@ -45,7 +46,7 @@ header {
         height: 100%;
         width: 100%;
 
-        padding: 0 165px 0 165px;
+        padding: 0 var(--title-pudding) 0 var(--title-pudding);
         margin-bottom: 20px;
 
         display: flex;
@@ -68,6 +69,9 @@ header {
         .links {
             display: flex;
             gap: 140px;
+            #mobile.orientation({
+                display: none;
+            });
             a {
                 margin: auto 0;
                 padding: 10px;
@@ -83,6 +87,10 @@ header {
         .mode {
             right: -140px;
             position: absolute;
+            #mobile.orientation({
+                right: 0;
+                position: static;
+            });
             path {
                 fill: var(--fg0);
             }

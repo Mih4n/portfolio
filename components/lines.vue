@@ -28,6 +28,8 @@ onMounted(updateLineCount);
 </script>
   
 <style lang="less" scoped>
+@import "/assets/css/mobile.less";
+
 .container {
   display: flex;
   width: 100%;
@@ -38,6 +40,9 @@ onMounted(updateLineCount);
   padding-left: 50px;
   display: flex;
   flex-direction: column;
+  #mobile.orientation({
+    display: none;
+  });
 }
 
 .line-numbers span {
@@ -50,6 +55,9 @@ onMounted(updateLineCount);
 
 .content {
   padding-left: 85px;
+  #mobile.orientation({
+    padding-left: 40px;
+  });
   overflow: auto;
 }
 </style>

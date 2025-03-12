@@ -16,6 +16,7 @@
 </template>
 
 <style lang="less">
+@import "/assets/css/mobile.less";
 #contacts {
     h3 {
         margin: auto 0;
@@ -37,7 +38,15 @@
     }
     .contacts {
         gap: 120px;
+        #mobile.orientation({
+            gap: 0;
+            justify-content: space-between;
+        });
     }
+    .line-title {
+        margin: auto var(--title-pudding) auto var(--title-pudding);
+    }
+
 
     .h-underline-a::after {
         content: '';

@@ -1,4 +1,5 @@
 @import "./base.less";
+@import "/assets/css/mobile.less";
 
 @font-face {
     font-family: Inconsolate;
@@ -22,6 +23,16 @@
     transition: all 0.5s cubic-bezier(1, 0, 0, 1) !important;
     transition-property: background-color, color, fill;
 }
+
+:root {
+    --title-pudding: 165px;
+}
+
+#mobile.orientation({
+    :root {
+        --title-pudding: 40px;
+    }
+});
 
 html.dark {
     --bg: #282828;
@@ -130,7 +141,7 @@ textarea
 .line-title {
     width: 100%;
     display: flex;
-    margin: auto auto auto 165px;
+    margin: auto auto auto var(--title-pudding);
     font-weight: 700;
     font-size: 18px;
 }

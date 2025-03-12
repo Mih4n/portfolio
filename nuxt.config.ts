@@ -10,7 +10,7 @@ export default defineNuxtConfig({
       meta: [{ name: "description", content: "Mih4n's Portfolio" }],
       link: [{ rel: "icon", href: "/favicon.ico" }],
       bodyAttrs: {
-        class: "bg",
+        class: "bg match-braces keep-markup",
       }
     },
   },
