@@ -26,6 +26,9 @@
 
 :root {
     --title-pudding: 165px;
+    --code-font-size: 18px;
+    --code-line-height: 32px;
+    --three-lines: calc(3 * var(--code-line-height));
 }
 
 #mobile.orientation({
@@ -143,5 +146,5 @@ textarea
     display: flex;
     margin: auto auto auto var(--title-pudding);
     font-weight: 700;
-    font-size: 18px;
+    font-size: var(--code-font-size);
 }

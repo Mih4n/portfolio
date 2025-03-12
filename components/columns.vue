@@ -30,6 +30,8 @@
     .right {    
         width: 100%;
         height: 100%;
+        overflow: scroll;
+        padding: var(--three-lines) 35px;
     }
 }
 </style>
