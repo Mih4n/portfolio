@@ -31,12 +31,12 @@ const toggleTheme = () => {
 .mode-switch {
     min-width: 33px;
     height: 100%;
+    overflow: hidden;
     display: flex;
     margin: auto 0;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    overflow: hidden;
     position: relative;
 
     .icon-wrapper {
@@ -48,7 +48,6 @@ const toggleTheme = () => {
         position: absolute;
         width: 33px;
         height: 33px;
-        top: 50%;
         left: 0;
         transform: translateY(200%);
         transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
@@ -56,13 +55,13 @@ const toggleTheme = () => {
 
     &.dark {
         .solar {
-            transform: translateY(-50%);
+            transform: translateY(0);
         }
     }
 
     &.light {
         .moon {
-            transform: translateY(-50%);
+            transform: translateY(0);
         }
     }
 }
