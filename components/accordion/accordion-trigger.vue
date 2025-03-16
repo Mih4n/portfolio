@@ -22,7 +22,6 @@
         --arrow-line-height: 3.5px;
 
         position: relative;
-
         .line {
             width: 76%;
             height: var(--arrow-line-height);
@@ -36,16 +35,17 @@
         }
 
         .line:nth-child(1) {
-            top: calc(100% - var(--arrow-line-height));
+            top: calc(100% - var(--arrow-line-height) / 2);
             left: 0;
-            transform-origin: bottom left;
-            transform: rotate(-45deg) translate(0, 50%);
+            transform-origin: right center;
+ 	        transform: translateX(-30%) rotate(45deg);
         }
+
         .line:nth-child(2) {
-            top: calc(100% - var(--arrow-line-height));
+            top: calc(100% - var(--arrow-line-height) / 2);
             right: 0;
-            transform-origin: bottom right;
-            transform: rotate(45deg) translate(0, 50%);
+            transform-origin: left center;
+            transform: translateX(30%) rotate(-45deg);
         }
     }
     .line-title {
@@ -58,14 +58,12 @@
     .a-trigger 
     .arrow {
         .line:nth-child(1) {
-            top: calc(-1 * var(--arrow-line-height));
-            left: 0;
-            transform: rotate(45deg) translate(0, 50%);
+            top: calc(-0.5 * var(--arrow-line-height));
+            transform: translateX(-30%) rotate(-45deg);
         }
         .line:nth-child(2) {
-            top: calc(-1 * var(--arrow-line-height));
-            right: 0;
-            transform: rotate(-45deg) translate(0, 50%);
+            top: calc(-0.5 * var(--arrow-line-height));
+            transform: translateX(30%) rotate(45deg);
         }
     }
 }
