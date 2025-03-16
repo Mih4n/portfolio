@@ -1,26 +1,21 @@
 <template>
-	<header class="bg-blue-white">
-		<main class="bg-blue">
-			<div class="content">
-				<h3 class="logo incontsolate" href="#">Mih4n</h3>
-				<div id="links">
-					<Links />
-				</div>
-			</div>
-			<ModeSwitch class="mode" />
-			<Burger v-model="opened" />
-		</main>
-		<div 
-			id="mobile-links"
-			ref="mobileLinks" 
-			class="bg-blue-white"
-			:class="{'opened': opened}"
-		>
-			<div class="content">
-				<Links />
-			</div>
-		</div>
-	</header>
+    <header class="bg-blue-white">
+        <main class="bg-blue">
+            <div class="content">
+                <h3 class="logo incontsolate" href="#">Mih4n</h3>
+                <div id="links">
+                    <Links />
+                </div>
+            </div>
+            <ModeSwitch class="mode" />
+            <Burger v-model="opened" />
+        </main>
+        <div id="mobile-links" ref="mobileLinks" class="bg-blue-white" :class="{ 'opened': opened }">
+            <div class="content">
+                <Links />
+            </div>
+        </div>
+    </header>
 </template>
 
 <script setup lang="ts">
@@ -36,135 +31,134 @@ watch(pressed, () => opened.value = false)
 @import "/assets/css/mobile.less";
 
 html {
-	--header-height: 100px;
-	scroll-padding-top: var(--header-height);
+    --header-height: 100px;
+    scroll-padding-top: var(--header-height);
 }
 
 header {
-	height: var(--header-height);
-	transition: all 0.5s cubic-bezier(1, 0, 0, 1);
-	width: 100vw;
+    height: var(--header-height);
+    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+    width: 100vw;
 
-	top: 0;
-	left: 0;
-	position: sticky;
+    top: 0;
+    left: 0;
+    position: sticky;
 
-	z-index: 1000;
+    z-index: 1000;
 
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-	filter: drop-shadow(0px 15px 25px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0px 15px 25px rgba(0, 0, 0, 0.1));
 
-	main {
-		height: 100%;
-		width: 100%;
+    main {
+        height: 100%;
+        width: 100%;
 
-		padding: 0 var(--title-pudding) 0 var(--title-pudding);
-		margin-bottom: 20px;
+        padding: 0 var(--title-pudding) 0 var(--title-pudding);
+        margin-bottom: 20px;
 
-		display: flex;
-		position: relative;
+        display: flex;
+        position: relative;
 
-		.content {
-			width: 100%;
-			display: flex;
-			margin: auto 0;
-		}
+        .content {
+            width: 100%;
+            display: flex;
+            margin: auto 0;
+        }
 
-		.logo {
-			margin: auto auto auto 0;
+        .logo {
+            margin: auto auto auto 0;
 
-			font-style: normal;
-			font-weight: 900;
-			font-size: 41px;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 41px;
 
-			font-weight: 900;
-		}
+            font-weight: 900;
+        }
 
-		#links {
-			display: flex;
-			gap: 140px;
+        #links {
+                display: flex;
+                gap: 140px;
 
-			#mobile.all({
-				display: none;
-			});
+                #mobile.all({
+                    display: none;
+                });
 
-			a {
-				margin: auto 0;
-				padding: 10px;
-				position: relative;
+            a {
+                margin: auto 0;
+                padding: 10px;
+                position: relative;
 
-				h3 {
-					margin: 0;
-					font-weight: 500;
-					font-size: 17px;
-					transition: all 0.5s cubic-bezier(1, 0, 0, 1);
-				}
-			}
-		}
+                h3 {
+                    margin: 0;
+                    font-weight: 500;
+                    font-size: 17px;
+                    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+                }
+            }
+        }
 
-		.mode {
-			right: -140px;
-			position: absolute;
+        .mode {
+            right: -140px;
+            position: absolute;
 
-			#mobile.all({
-				right: 0;
-				position: static;
-			});
+            #mobile.all({
+                right: 0;
+                position: static;
+            });
 
-			path {
-				fill: var(--fg0);
-			}
-		}
+            path {
+                fill: var(--fg0);
+            }
+        }
 
-		.burger {
-			display: none;
-		}
+        .burger {
+            display: none;
+        }
 
-		#mobile.all({
-			.burger {
-				display: flex;
-			}
-		})
-	}
+        #mobile.all({
+            .burger {
+                display: flex;
+            }
+        })
+    }
 
-	#mobile-links {
-		display: none;
-		#mobile.all({
-			display: grid;
-		});
+    #mobile-links {
+        display: none;
 
-		width: 100vw;
+        #mobile.all({
+            display: grid;
+        });
 
-		overflow: hidden;
+        width: 100vw;
 
-		top: calc(var(--header-height) - 20px);
-		position: absolute;
-		align-items: flex-start;
-		grid-template-rows: 0fr;
-		transition: all 0.5s ease-in-out;
+        overflow: hidden;
 
-		&.opened {
-			grid-template-rows: 1fr;
-		}
+        top: calc(var(--header-height) - 20px);
+        position: absolute;
+        align-items: flex-start;
+        grid-template-rows: 0fr;
+        transition: all 0.5s ease-in-out;
 
-		.content {
-			overflow: hidden;
+        &.opened {
+            grid-template-rows: 1fr;
+        }
 
-			display: flex;
-			flex-direction: column;
+        .content {
+            overflow: hidden;
 
-			.h-underline-a {
-				padding-bottom: 5px;
-				margin: 5px 0 0 auto;
-			}
-			
-			padding-right: var(--title-pudding);
-			padding-bottom: 5px;
-			
-			height: fit-content;
-		}
-	}
+            display: flex;
+            flex-direction: column;
+
+            .h-underline-a {
+                padding-bottom: 5px;
+                margin: 5px 0 0 auto;
+            }
+
+            padding-right: var(--title-pudding);
+            padding-bottom: 5px;
+        }
+    }
 }
 </style>
