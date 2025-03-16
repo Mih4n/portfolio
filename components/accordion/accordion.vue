@@ -1,6 +1,6 @@
 <template>
     <ul ref="obj" class="accordion">
-      <slot></slot>
+        <slot></slot>
     </ul>
 </template>
   

@@ -1,5 +1,5 @@
 <template>
-    <span class="icon" v-html="icon" />
+	<div class="icon" v-html="icon" />
 </template>
 
 <script setup lang="ts">
@@ -11,24 +11,24 @@ import moon from "@/assets/icons/moon.svg?raw"
 import arrow from "@/assets/icons/arrow.svg?raw"
 
 const props = defineProps({
-    name: String,
+	name: String,
 })
 const map: Record<string, any> = {
-    "email": email,
-    "linkedIn": linkedIn,
-    "telegram": telegram,
-    "solar": solar,
-    "moon": moon,
-    "arrow": arrow
+	"email": email,
+	"linkedIn": linkedIn,
+	"telegram": telegram,
+	"solar": solar,
+	"moon": moon,
+	"arrow": arrow
 }
 const icon = computed(() => map[props.name ?? ""] || undefined)
 </script>
 
 <style lang="less">
 .icon {
-    svg {
-        width: 100%;
-        height: 100%;
-    }
+	svg {
+		width: 100%;
+		height: 100%;
+	}
 }
 </style>

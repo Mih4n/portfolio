@@ -38,7 +38,7 @@
     }
     .contacts {
         gap: 120px;
-        #mobile.orientation({
+        #mobile.all({
             gap: 0;
             justify-content: space-between;
         });
@@ -49,28 +49,7 @@
 
 
     .h-underline-a::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 3px;
-        bottom: 0;
-        left: 0;
         background-color: var(--bg-0h);
-        transform-origin: bottom right;
-        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
-    }
-
-    .h-underline-a:hover::after {
-        transform: scaleX(1);
-    }
-
-    .h-underline-a::after {
-        transform-origin: bottom right;
-    }
-
-    .h-underline-a:hover::after {
-        transform-origin: bottom left;
     }
 }
 </style>

@@ -2,17 +2,11 @@
     <Columns class="about">
         <template #left>
             <Lines>
-                <ContentRenderer 
-                    v-if="code"
-                    :value="code" 
-                /> 
+                <ContentRenderer v-if="code" :value="code" />
             </Lines>
         </template>
         <template #right>
-            <ContentRenderer 
-                v-if="content"
-                :value="content" 
-            /> 
+            <ContentRenderer v-if="content" :value="content" />
         </template>
     </Columns>
 </template>

@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: row;
 
-    #mobile.orientation({
+    #mobile.all({
         flex-direction: column;
     });
 

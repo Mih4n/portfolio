@@ -31,7 +31,7 @@
     --three-lines: calc(3 * var(--code-line-height));
 }
 
-#mobile.orientation({
+#mobile.all({
     :root {
         --title-pudding: 40px;
     }
@@ -147,4 +147,34 @@ textarea
     margin: auto auto auto var(--title-pudding);
     font-weight: 700;
     font-size: var(--code-font-size);
+}
+
+.h-underline-a::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 3px;
+	bottom: 0;
+	left: 0;
+	background-color: var(--fg0);
+	transform-origin: bottom right;
+	transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.h-underline-a:hover::after {
+	transform: scaleX(1);
+}
+
+.h-underline-a::after {
+	transform-origin: bottom right;
+}
+
+.h-underline-a:hover::after {
+	transform-origin: bottom left;
+}
+
+.h-underline-a {
+	display: flex;
+	position: relative;
 }

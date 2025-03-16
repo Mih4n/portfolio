@@ -1,12 +1,8 @@
 <template>
-    <div 
-        class="mode-switch"
-        :class="{ 'light': !mode, 'dark': mode }"
-        @click="toggleTheme()"
-    >
+    <div class="mode-switch" :class="{ 'light': !mode, 'dark': mode }" @click="toggleTheme()">
         <div class="icon-wrapper">
             <Icon name="solar" class="solar" />
-            <Icon name="moon" class="moon"/>
+            <Icon name="moon" class="moon" />
         </div>
     </div>
 </template>
@@ -46,7 +42,9 @@ const toggleTheme = () => {
     .icon-wrapper {
         height: 33px;
     }
-    .moon, .solar {
+
+    .moon,
+    .solar {
         position: absolute;
         width: 33px;
         height: 33px;
@@ -61,6 +59,7 @@ const toggleTheme = () => {
             transform: translateY(-50%);
         }
     }
+
     &.light {
         .moon {
             transform: translateY(-50%);
