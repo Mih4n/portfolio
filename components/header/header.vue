@@ -136,7 +136,6 @@ header {
 		});
 
 		width: 100vw;
-		height: fit-content;
 
 		overflow: hidden;
 
@@ -144,7 +143,7 @@ header {
 		position: absolute;
 		align-items: flex-start;
 		grid-template-rows: 0fr;
-		transition: grid-template-rows 0.5s ease-in-out;
+		transition: all 0.5s ease-in-out;
 
 		&.opened {
 			grid-template-rows: 1fr;
