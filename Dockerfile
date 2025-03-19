@@ -20,4 +20,4 @@ COPY --from=build /src/.output /src/
 # COPY --from=build /src/node_modules /src/node_modules
 EXPOSE 3000
 
-CMD [ "node", "/server/index.mjs" ]
+CMD [ "node", "server/index.mjs" ]
