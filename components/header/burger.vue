@@ -11,7 +11,6 @@
 const model = defineModel({ type: Boolean, default: false })
 function toggle() {
 	model.value = !model.value
-	console.log(model.value)
 }
 </script>
 

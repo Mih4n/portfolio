@@ -1,19 +1,15 @@
 <template>
-    <Columns class="about">
-        <template #left>
-            <Lines>
-                <ContentRenderer v-if="code" :value="code" />
-            </Lines>
-        </template>
-        <template #right>
-            <ContentRenderer v-if="content" :value="content" />
-        </template>
-    </Columns>
+    <Code 
+        :code="about && about[0]?.content || ''"
+        :addition="about && about[1]?.content || ''"
+        class="about"
+    />
 </template>
 
 <script setup lang="ts">
-const { data: code } = await useAsyncData('about-page', () => queryCollection("about").first())
-const { data: content } = await useAsyncData('about-page', () => queryCollection("about").skip(1).first())
+import type { GrayMatterFile } from 'gray-matter';
+
+const about = (await useFetch<GrayMatterFile<string>[]>("/api/markdown/about")).data
 </script>
 
 <style>

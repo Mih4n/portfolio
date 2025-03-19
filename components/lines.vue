@@ -50,7 +50,7 @@ onMounted(updateLineCount);
     font-size: var(--code-font-size);
     line-height: var(--code-line-height);
     text-align: right;
-    color: var(--bg0-h);
+    color: var(--bg2);
 }
 
 .content {

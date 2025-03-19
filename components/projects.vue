@@ -8,22 +8,17 @@
 			</template>
 			<template #content>
 				<Accordion>
-					<AccordionItem v-for="(project, index) in projects" :key="project.path">
+					<AccordionItem v-for="(project, index) in projects" :key="`${index}-projects`">
 						<template #trigger>
 							<AccordionTrigger class="bg-blue-white arrow-bg-0h" :class="{ 'bg-aqua': index % 2 === 1 }">
-								<h3 class="text-bg-0h">{{ project.title }}</h3>
+								<h3 class="text-bg-0h">{{ project.data.title }}</h3>
 							</AccordionTrigger>
 						</template>
 						<template #content>
-							<Columns>
-								<template #left>
-									<Lines>
-										<ContentRenderer :value="project" />
-									</Lines>
-								</template>
-								<template #right>
-								</template>
-							</Columns>
+							<Code 
+								:code="project.content"
+								:addition="project.content"
+							/>
 						</template>
 					</AccordionItem>
 				</Accordion>
@@ -36,9 +31,9 @@
 </template>
 
 <script setup lang="ts">
-const { data: projects } = await useAsyncData("projects", () => {
-	return queryCollection("projects").all()
-})
+import type { GrayMatterFile } from "gray-matter";
+
+const projects = (await useFetch<GrayMatterFile<string>[]>("/api/markdown/projects")).data
 </script>
 
 <style lang="less">

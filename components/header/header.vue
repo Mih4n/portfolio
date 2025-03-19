@@ -10,8 +10,8 @@
             <ModeSwitch class="mode" />
             <Burger v-model="opened" />
         </main>
-        <div id="mobile-links" ref="mobileLinks" class="bg-blue-white" :class="{ 'opened': opened }">
-            <div class="content">
+        <div id="mobile-links" class="bg-blue-white" :class="{ 'opened': opened }">
+            <div class="content" ref="content">
                 <Links />
             </div>
         </div>
@@ -19,20 +19,38 @@
 </template>
 
 <script setup lang="ts">
+import ModeSwitch from './modeSwitch.vue';
 import Burger from './burger.vue';
 import Links from './links.vue';
 const opened = ref<boolean>()
-const mobileLinks = ref<HTMLElement>()
-const { pressed } = useMousePressed({ target: mobileLinks })
-watch(pressed, () => opened.value = false)
+
+const content = useTemplateRef('content')
+const headerHight = useCssVar('--header-height')
+const scrollPudding = useCssVar('--scroll-pudding')
+
+function toNumber(string: string): number {
+    return parseFloat(string.slice(0, string.length - 2))
+}
+
+function toPixels(number: number): string {
+    return number.toString().concat("px")
+}
+
+onMounted(() => {
+    if (content.value) {
+        const header = toNumber(headerHight.value || '0')
+        scrollPudding.value = toPixels(header - 20 + content.value.clientHeight)
+    }
+})
 </script>
 
 <style lang="less">
 @import "/assets/css/mobile.less";
 
-html {
+:root {
     --header-height: 100px;
-    scroll-padding-top: var(--header-height);
+    --scroll-pudding: 100px;
+    scroll-padding-top: var(--scroll-pudding);
 }
 
 header {
@@ -81,7 +99,7 @@ header {
                 display: flex;
                 gap: 140px;
 
-                #mobile.all({
+                #break-points.width980({
                     display: none;
                 });
 
@@ -103,7 +121,7 @@ header {
             right: -140px;
             position: absolute;
 
-            #mobile.all({
+            #break-points.width980({
                 right: 0;
                 position: static;
             });
@@ -117,7 +135,7 @@ header {
             display: none;
         }
 
-        #mobile.all({
+        #break-points.width980({
             .burger {
                 display: flex;
             }
@@ -127,7 +145,7 @@ header {
     #mobile-links {
         display: none;
 
-        #mobile.all({
+        #break-points.width980({
             display: grid;
         });
 

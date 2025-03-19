@@ -1,13 +1,27 @@
 <template>
     <div class="columns">
-        <div class="left bg-0h">
+        <div 
+            v-if="showLeft"
+            class="left column bg-0h" 
+        >
             <slot name="left"></slot>
         </div>
-        <div class="right">
+        <div 
+            v-if="showRight"
+            class="right column bg"
+        >
             <slot name="right"></slot>
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+import { useSlots } from "vue";
+
+const slots = useSlots();
+const showLeft = !!slots.left;
+const showRight = !!slots.right;
+</script>
 
 <style lang="less">
 @import "/assets/css/mobile.less";
@@ -20,17 +34,15 @@
         flex-direction: column;
     });
 
-    height: fit-content;
-    .left {
+
+    .column {
         width: 100%;
         height: 100%;
+        display: flex;
         overflow: scroll;
     }
 
     .right {    
-        width: 100%;
-        height: 100%;
-        overflow: scroll;
         padding: var(--three-lines) 35px;
     }
 }

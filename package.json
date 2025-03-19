@@ -10,12 +10,17 @@
         "postinstall": "nuxt prepare"
     },
     "dependencies": {
-        "@nuxt/content": "^3.3.0",
+        "@nuxt/devtools": "^2.3.0",
+        "@nuxtjs/mdc": "^0.15.0",
+        "@nuxtjs/sitemap": "^7.2.9",
         "@pinia/nuxt": "^0.7.0",
+        "@unhead/vue": "^2.0.0-rc.1",
         "@vueuse/nuxt": "^11.2.0",
-        "nuxt": "^3.14.159",
+        "gray-matter": "^4.0.3",
+        "nuxt": "^3.16.0",
         "nuxt-svgo-loader": "^0.4.1",
         "prismjs": "^1.29.0",
+        "unstorage": "^1.15.0",
         "vue": "latest",
         "vue-router": "latest"
     },
@@ -23,6 +28,7 @@
         "vue": "latest"
     },
     "devDependencies": {
+        "@types/node": "^22.13.10",
         "@types/prismjs": "^1.26.5",
         "less": "^4.2.0"
     }
