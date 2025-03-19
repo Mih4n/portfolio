@@ -1,11 +1,11 @@
-FROM node:20.18.0-slim as base
+FROM node:23.10.0-slim as base
 
 WORKDIR /src
 
 FROM base as build
 
 COPY --link package.json package-lock.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 COPY --link . .
 
