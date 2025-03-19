@@ -4,8 +4,8 @@ WORKDIR /src
 
 FROM base as build
 
-COPY --link package.json package-lock.json ./
-RUN npm install --legacy-peer-deps
+COPY --link package.json ./
+RUN npm install
 
 COPY --link . .
 
