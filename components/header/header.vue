@@ -55,7 +55,6 @@ onMounted(() => {
 
 header {
     height: var(--header-height);
-    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
     width: 100vw;
 
     top: 0;

@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   ssr: false,
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  css: ["@/assets/css/main.less", "@/assets/css/prism.css"],
+  css: ["@/assets/css/main.less", "@/assets/css/prism.less"],
   modules: [
     "@pinia/nuxt",
     "@vueuse/nuxt",

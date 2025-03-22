@@ -38,7 +38,7 @@ const showRight = !!slots.right;
     .column {
         width: 100%;
         height: 100%;
-        display: flex;
+        display: block;
         overflow: scroll;
     }
 
