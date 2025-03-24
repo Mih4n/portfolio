@@ -19,7 +19,7 @@ export default defineNuxtConfig({
         { name: "og:title", content: "Mih4n" },
         { name: "og:description", content: "Mih4n's Portfolio" },
         { name: "og:url", content: "https://mih4n.xyz" },
-        { name: "og:image", content: "https://mih4n.xyz/og.png" },
+        { name: "og:image", content: "https://mih4n.xyz/og-big.png" },
         { name: "twitter:card", content: "summary" },
         { name: "twitter:title", content: "Mih4n" },
         { name: "twitter:image", content: "https://mih4n.xyz/og.png" },
