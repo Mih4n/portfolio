@@ -121,3 +121,31 @@ textarea {
 	outline: none;
 	appearance: none;
 }
+
+* {
+  &::-webkit-scrollbar {
+    width: 10px;
+    position: absolute;
+  }
+
+  &.scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #665c5430;
+    &:hover{
+      background-color: #665c54;
+    } 
+    width: 8px;
+  }
+
+  &:not(:hover)::-webkit-scrollbar-thumb {
+    background-color: #00000000;
+  }
+
+  &::-webkit-resizer {
+    background: transparent;
+  }
+}
+

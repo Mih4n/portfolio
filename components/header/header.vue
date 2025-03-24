@@ -59,7 +59,7 @@ onMounted(() => {
 
 header {
     height: var(--header-height);
-    width: 100vw;
+    width: 100%;
 
     top: 0;
     left: 0;
@@ -73,8 +73,8 @@ header {
     filter: drop-shadow(0px 15px 25px rgba(0, 0, 0, 0.1));
 
     main {
-        height: 100%;
         width: 100%;
+        height: 100%;
 
         padding: 0 var(--title-pudding) 0 var(--title-pudding);
         margin-bottom: 20px;

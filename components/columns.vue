@@ -39,7 +39,7 @@ const showRight = !!slots.right;
         width: 100%;
         height: 100%;
         display: block;
-        overflow: scroll;
+        overflow: overlay;
     }
 
     .right {    
