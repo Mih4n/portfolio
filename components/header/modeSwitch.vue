@@ -1,5 +1,5 @@
 <template>
-    <div class="mode-switch" :class="{ 'light': !mode, 'dark': mode }" @click="toggleTheme()">
+    <div class="mode-switch" @click="toggleTheme()">
         <div class="icon-wrapper">
             <Icon name="solar" class="solar" />
             <Icon name="moon" class="moon" />
@@ -8,7 +8,10 @@
 </template>
 
 <script setup lang="ts">
-const mode = useDark({ disableTransition: false });
+const mode = useDark({ 
+    storageKey: "app-theme", 
+    disableTransition: false 
+});
 const toggleDark = useToggle(mode);
 
 const toggleTheme = () => {
@@ -52,17 +55,17 @@ const toggleTheme = () => {
         transform: translateY(200%);
         transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
     }
+}
 
-    &.dark {
-        .solar {
-            transform: translateY(0);
-        }
+html.dark .mode-switch {
+    .solar {
+        transform: translateY(0);
     }
+}
 
-    &.light {
-        .moon {
-            transform: translateY(0);
-        }
+html:not(.dark) .mode-switch {
+    .moon {
+        transform: translateY(0);
     }
 }
 </style>

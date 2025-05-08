@@ -32,8 +32,9 @@
 
 <script setup lang="ts">
 import type { GrayMatterFile } from "gray-matter";
-
-const projects = (await useFetch<GrayMatterFile<string>[]>("/api/markdown/projects")).data
+const projects = ref<GrayMatterFile<string>[]>([])
+useFetch<GrayMatterFile<string>[]>("/api/markdown/projects")
+	.then(response => projects.value = response.data.value ?? [])
 </script>
 
 <style lang="less">

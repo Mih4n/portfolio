@@ -49,8 +49,9 @@ onMounted(() => {
 
 :root {
     --header-height: 100px;
-    --scroll-pudding: 100px;
+}
 
+body {
     scroll-padding-top: var(--header-height);
     #break-points.width980({
         scroll-padding-top: var(--scroll-pudding);

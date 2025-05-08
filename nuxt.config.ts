@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
   css: ["@/assets/css/main.less", "@/assets/css/prism.less"],
@@ -51,11 +51,18 @@ export default defineNuxtConfig({
           crossorigin: 'anonymous'
         }
       ],
+      script: [
+        {
+          src: "/scripts/dark.js",
+          type: 'text/javascript',
+          tagPosition: 'head',
+        }
+      ],
       htmlAttrs: {
         lang: 'en'
       },
       bodyAttrs: {
-        class: "bg match-braces keep-markup",
+        class: "bg match-braces keep-markup"
       }
     },
   },
