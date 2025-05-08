@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import highlightAll from '~/composables/usePrism';
-onMounted(() => {
-	highlightAll()
-})
+// onMounted(() => {
+// 	highlightAll()
+// })
 </script>
