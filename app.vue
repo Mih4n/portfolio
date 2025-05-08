@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import highlightAll from '~/composables/usePrism';
-// onMounted(() => {
-// 	highlightAll()
-// })
+import { highlightAll } from '~/composables/usePrism';
+onMounted(() => {
+	highlightAll()
+})
 </script>
