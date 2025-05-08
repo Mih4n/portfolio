@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@vueuse/nuxt",
     "@nuxtjs/mdc",
-    "@nuxtjs/sitemap",
+    "@nuxtjs/sitemap"
   ],
   app: {
     cdnURL: 'https://mih4n.xyz/',
@@ -26,8 +26,30 @@ export default defineNuxtConfig({
         { name: "twitter:description", content: "Mih4n's Portfolio" }
       ],
       link: [
-        { rel: "icon", type: 'image/ico', href: "/favicon.ico" },
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+        { 
+          rel: "icon", 
+          type: 'image/ico', 
+          href: "/favicon.ico" 
+        },
+        { 
+          rel: 'icon', 
+          type: 'image/png', 
+          href: '/favicon.png' 
+        },
+        {
+          rel: 'preload',
+          href: '/fonts/JetBrainsMono.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous',
+        },
+        {
+          rel: 'preload',
+          href: '/fonts/Inconsolata.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous',
+        }
       ],
       htmlAttrs: {
         lang: 'en'

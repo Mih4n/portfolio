@@ -1,5 +1,6 @@
 <template>
     <Code 
+        v-if="about !== null && about"
         :code="about && about[0]?.content || ''"
         :addition="about && about[1]?.content || ''"
         class="about"

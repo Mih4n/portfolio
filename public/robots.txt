@@ -1,2 +1,1 @@
-Disallow: 
 Sitemap: https://mih4n.xyz/sitemap.xml
