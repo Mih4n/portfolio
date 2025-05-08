@@ -38,17 +38,17 @@ export default defineNuxtConfig({
         },
         {
           rel: 'preload',
-          href: '/fonts/JetBrainsMono.woff2',
+          href: '/fonts/JetBrainsMono.ttf',
           as: 'font',
-          type: 'font/woff2',
-          crossorigin: 'anonymous',
+          type: 'font/ttf',
+          crossorigin: 'anonymous'
         },
         {
           rel: 'preload',
-          href: '/fonts/Inconsolata.woff2',
+          href: '/fonts/Inconsolata.ttf',
           as: 'font',
-          type: 'font/woff2',
-          crossorigin: 'anonymous',
+          type: 'font/ttf',
+          crossorigin: 'anonymous'
         }
       ],
       htmlAttrs: {
