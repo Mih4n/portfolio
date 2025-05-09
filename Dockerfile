@@ -16,8 +16,8 @@ ENV PORT=3000
 ENV NODE_ENV=production
 
 COPY --from=build /src/.output /src/
-# Optional, only needed if you rely on unbundled dependencies
-# COPY --from=build /src/node_modules /src/node_modules
-EXPOSE 3000
 
-CMD [ "node", "server/index.mjs" ]
+EXPOSE 3000/tcp
+EXPOSE 3000/udp
+
+CMD ["node", "--experimental-quic", "server/index.mjs"]
