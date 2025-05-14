@@ -22,10 +22,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY --from=build /src/.output /src/
-COPY ./public/ /var/www/cdn
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY ./certs/ /certs/
 RUN rm -f /etc/nginx/sites-enabled/default
-
-EXPOSE 3000
 
 CMD ["sh", "-c", "nginx -g 'daemon off;' & node server/index.mjs"]
