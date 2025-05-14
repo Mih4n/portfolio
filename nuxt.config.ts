@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap"
   ],
   app: {
-    cdnURL: 'https://mih4n.xyz/cdn/',
+    cdnURL: 'https://mih4n.xyz/',
     head: {
       title: "Mih4n",
       meta: [
