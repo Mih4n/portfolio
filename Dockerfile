@@ -1,23 +1,31 @@
-FROM node:23.10.0-slim as base
+FROM node:24.0.1-slim AS base
+
+# --- BUILD STAGE ---
+FROM base AS build
 
 WORKDIR /src
-
-FROM base as build
-
-COPY --link package.json ./
+COPY package.json ./
 RUN npm install
-
-COPY --link . .
-
+COPY . .
 RUN npm run build
-FROM base
 
-ENV PORT=443
+# --- PRODUCTION STAGE ---
+FROM base
+WORKDIR /src
+
+ENV PORT=3000
 ENV NODE_ENV=production
+ENV NITRO_PRESET=node-cluster
+
+RUN apt-get update && \
+    apt-get install -y nginx && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY --from=build /src/.output /src/
+COPY ./public/ /var/www/cdn
+COPY nginx.conf /etc/nginx/nginx.conf
+RUN rm -f /etc/nginx/sites-enabled/default
 
-EXPOSE 443/tcp
-EXPOSE 443/udp
+EXPOSE 3000
 
-CMD ["node", "--experimental-quic", "server/index.mjs"]
+CMD ["sh", "-c", "nginx -g 'daemon off;' & node server/index.mjs"]
