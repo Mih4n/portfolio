@@ -12,12 +12,12 @@ COPY --link . .
 RUN npm run build
 FROM base
 
-ENV PORT=3000
+ENV PORT=443
 ENV NODE_ENV=production
 
 COPY --from=build /src/.output /src/
 
-EXPOSE 3000/tcp
-EXPOSE 3000/udp
+EXPOSE 443/tcp
+EXPOSE 443/udp
 
 CMD ["node", "--experimental-quic", "server/index.mjs"]
