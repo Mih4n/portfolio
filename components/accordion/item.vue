@@ -20,7 +20,6 @@ const accordion: Ref<Accordion> | undefined = inject("Accordion")
 const index = ref(accordion ? accordion.value.count++ : 0)
 const visible = computed(() => accordion && index.value == accordion.value.active)
 const open = () => {
-	console.log(accordion?.value)
 	if (!accordion) return
 	if (visible.value) {
 		accordion.value.active = null;

@@ -2,13 +2,25 @@
     <div class="bg-yellow flex" id="contacts" style="height: 100px; width: 100%;">
         <div class="line-title contacts">
             <h3 class="text-bg-0h">Contacts:</h3>
-            <a class="link h-underline-a" href="https://linkedin.com/in/mih4n">
+            <a 
+                class="link h-underline-a" 
+                href="https://linkedin.com/in/mih4n"
+                aria-label="my linkedin profile"
+            >
                 <Icon name="linkedIn" />
             </a>
-            <a class="link h-underline-a" href="https://t.me/lmih4nl">
+            <a 
+                class="link h-underline-a" 
+                href="https://t.me/lmih4nl"
+                aria-label="my telegram profile"
+            >
                 <Icon name="telegram" />
             </a>
-            <a class="link h-underline-a" href="mailto:selfish@mih4n.xyz">
+            <a 
+                class="link h-underline-a" 
+                href="mailto:selfish@mih4n.xyz"
+                aria-label="my email address"
+            >
                 <Icon name="email" />
             </a>
         </div>

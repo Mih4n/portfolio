@@ -1,5 +1,10 @@
 <template>
-	<button class="burger" @click="toggle" :class="{ 'active': model }">
+	<button 
+		class="burger" 
+		@click="toggle" 
+		:class="{ 'active': model }"
+		aria-label="burger menu"
+	>
 		<div class="line" />
 		<div class="line" />
 		<div class="line" />
