@@ -1,8 +1,8 @@
 <template>
     <div class="carousel">
-        <div class="carousel-track" ref="track">
+        <ul class="carousel-track">
             <slot></slot>
-        </div>
+        </ul>
     </div>
 </template>
 
@@ -14,6 +14,8 @@
     display: flex;
     overflow: auto;
     animation: blink 1s steps(1, end) infinite;
+
+    position: relative;
 
     border-left: 3.5px solid var(--fg0);
 
@@ -38,6 +40,13 @@
     height: 100%;
     & * {
         height: 100%;
+        aspect-ratio: initial;
+    }
+    cursor: grab;
+    overflow-x: hidden;
+
+    &.dragging {
+        cursor: grabbing;
     }
 }
 </style>

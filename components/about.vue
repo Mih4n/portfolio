@@ -15,9 +15,3 @@ const about = ref<GrayMatterFile<string>[]>([])
 useFetch<GrayMatterFile<string>[]>("/api/markdown/about")
     .then(response => about.value = response.data.value ?? [])
 </script>
-
-<style>
-.about {
-    height: calc(100dvh - var(--header-height));
-}
-</style>
