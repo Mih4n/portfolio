@@ -39,6 +39,5 @@
     }
     .stack-carousel .carousel-track {
         gap: 50px;
-        padding: 0 20px;
     }
 </style>

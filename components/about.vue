@@ -8,7 +8,6 @@
 </template>
 
 <script setup lang="ts">
-import type { GrayMatterFile } from 'gray-matter';
 import type Project from '../types/project';
 
 const about = ref<Project | undefined>(undefined)

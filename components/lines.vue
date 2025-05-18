@@ -59,7 +59,6 @@ onMounted(updateLineCount);
     });
 
     height: fit-content;
-    min-height: 100%;
     padding: var(--three-lines) 0 var(--three-lines) 85px;
 }
 </style>
