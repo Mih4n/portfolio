@@ -35,7 +35,7 @@
 }
 
 .carousel-track {
-    gap: 10px;
+    padding: 0 20px;
     display: flex;
     height: 100%;
     & * {

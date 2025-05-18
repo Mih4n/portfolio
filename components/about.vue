@@ -1,17 +1,18 @@
 <template>
     <Code 
-        v-if="about.length >= 2"
-        :code="about && about[0]?.content || ''"
-        :addition="about && about[1]?.content || ''"
+        v-if="about"
+        :code="about.content.left?.content"
+        :addition="about.content.right?.content"
         class="about"
     />
 </template>
 
 <script setup lang="ts">
 import type { GrayMatterFile } from 'gray-matter';
+import type Project from '../types/project';
 
-const about = ref<GrayMatterFile<string>[]>([])
+const about = ref<Project | undefined>(undefined)
 
-useFetch<GrayMatterFile<string>[]>("/api/markdown/about")
-    .then(response => about.value = response.data.value ?? [])
+useFetch<Project>("/api/projects/about")
+    .then(response => about.value = response.data.value ?? undefined)
 </script>

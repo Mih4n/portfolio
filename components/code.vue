@@ -1,9 +1,9 @@
 <template>
     <Columns>
-        <template #left>
+        <template #left v-if="code">
             <Lines>
                 <MDC 
-                    :value="code ?? ''" 
+                    :value="code" 
                     :tag="false"
                 />
             </Lines>
@@ -19,7 +19,7 @@
 
 <script lang="ts" setup>
 defineProps<{
-  code: string | null;
+  code?: string | null;
   addition?: string | null;
 }>();
 </script>

@@ -1,8 +1,3 @@
----
-title: Second
-date: 2020-11-11
----
-
 ```cs
 using Mih4n.About;
 

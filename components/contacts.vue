@@ -4,6 +4,13 @@
             <h3 class="text-bg-0h">Contacts:</h3>
             <a 
                 class="link h-underline-a" 
+                href="https://github.com/mih4n"
+                aria-label="my github profile"
+            >
+                <Icon name="github" />
+            </a>
+            <a 
+                class="link h-underline-a" 
                 href="https://linkedin.com/in/mih4n"
                 aria-label="my linkedin profile"
             >
@@ -44,6 +51,7 @@
         position: relative;
     }
     .icon {
+        width: 30px;
         path {
             fill: var(--bg-0h);
         }

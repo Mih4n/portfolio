@@ -1,0 +1,12 @@
+{
+    "title": "Keapr",
+    "description": "This is the about page for the application.",
+    "content": {
+        "left": {
+            "path": "./left.md"
+        },
+        "right": {
+            "path": "./right.md"
+        }
+    }
+}

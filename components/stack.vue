@@ -1,11 +1,11 @@
 <template>
     <Code 
-        :code="stack && stack[0]?.content || ''"
+        :code="stack?.content.left?.content"
     />
 </template>
 
 <script lang="ts" setup>
-import type { GrayMatterFile } from 'gray-matter';
+import type Project from '../types/project';
 
-const stack = (await useFetch<GrayMatterFile<string>[]>("/api/markdown/stack")).data
+const stack = (await useFetch<Project>("/api/projects/stack")).data
 </script>

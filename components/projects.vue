@@ -16,8 +16,8 @@
 						</template>
 						<template #content>
 							<Code 
-								:code="project.content"
-								:addition="project.content"
+								:code="project.content.left?.content"
+								:addition="project.content.right?.content"
 							/>
 						</template>
 					</AccordionItem>
@@ -31,9 +31,10 @@
 </template>
 
 <script setup lang="ts">
-import type { GrayMatterFile } from "gray-matter";
-const projects = ref<GrayMatterFile<string>[]>([])
-useFetch<GrayMatterFile<string>[]>("/api/markdown/projects")
+import type Project from '../types/project';
+
+const projects = ref<Project[]>([])
+useFetch<Project[]>("/api/projects")
 	.then(response => projects.value = response.data.value ?? [])
 </script>
 

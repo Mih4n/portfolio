@@ -1,0 +1,10 @@
+{
+    "content": {
+        "left": {
+            "path": "./left.md"
+        },
+        "right": {
+            "path": "./right.md"
+        }
+    }
+}

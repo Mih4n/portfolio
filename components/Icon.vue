@@ -9,6 +9,7 @@ import telegram from "@/assets/icons/telegram.svg?raw"
 import solar from "@/assets/icons/solar.svg?raw"
 import moon from "@/assets/icons/moon.svg?raw"
 import arrow from "@/assets/icons/arrow.svg?raw"
+import github from "@/assets/icons/github.svg?raw"
 
 const props = defineProps({
 	name: String,
@@ -19,7 +20,8 @@ const map: Record<string, any> = {
 	"telegram": telegram,
 	"solar": solar,
 	"moon": moon,
-	"arrow": arrow
+	"arrow": arrow,
+	"github": github
 }
 const icon = computed(() => map[props.name ?? ""] || undefined)
 </script>
