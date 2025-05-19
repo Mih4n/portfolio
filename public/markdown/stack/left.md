@@ -11,7 +11,7 @@
                     Title = "Technology Stack",
                     Description = "A collection of technologies and tools I use in my projects.",
                     Stack = [
-                        <carousel class="stack-carousel">
+                        <loop class="loop-stack">
                             <img src="/img/stack/cs.svg" alt="C#" title="C#">
                             <img src="/img/stack/dotnet.svg" alt=".NET" title=".NET">
                             <img src="/img/stack/css.svg" alt="CSS" title="CSS">
@@ -26,7 +26,7 @@
                             <img src="/img/stack/postgres.svg" alt="PostgreSQL" title="PostgreSQL">
                             <img src="/img/stack/git.svg" alt="Git" title="Git">
                             <img src="/img/stack/github.svg" alt="GitHub" title="GitHub">
-                        </carousel> 
+                        </loop>
                     ]
                 }
         }
@@ -34,10 +34,7 @@
 </pre>
 
 <style>
-    .stack-carousel {
-        height: calc(2 * var(--code-line-height))
-    }
-    .stack-carousel .carousel-track {
-        gap: 50px;
-    }
+.loop-stack {
+    width: 1000px;
+}
 </style>
