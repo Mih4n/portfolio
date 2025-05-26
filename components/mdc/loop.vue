@@ -19,9 +19,13 @@
 .loop {
 	--color: var(--bg-0h);
 
-	height: calc(2 * var(--code-line-height));
-	overflow: hidden;
-	position: relative;
+	width: 100%;
+    height: calc(2 * var(--code-line-height));
+
+    display: block;
+    overflow: auto;
+
+    position: relative;
 
 	&::after,
 	&::before {
@@ -29,6 +33,8 @@
 		width: 100px;
 		height: 100%;
 		position: absolute;
+
+		transition: background 0.5s cubic-bezier(1, 0, 0, 1);
 
 		z-index: 2;
 	}
@@ -47,14 +53,19 @@
 
 	.slider {
 		display: flex;
-		height: inherit;
-		width: max-content;
-		animation: 20s slide linear infinite;
+		overflow: hidden;
+		height: 100%;
+
+		flex-shrink: 0;
 
 		.slide {
+			display: flex;
 			gap: 50px;
 			padding-left: 50px;
-			display: flex;
+			height: 100%;
+			flex-shrink: 0;
+
+			animation: 3s slide linear infinite;
 		}
 	}
 }

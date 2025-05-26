@@ -22,6 +22,23 @@
     &::-webkit-scrollbar {
         display: none;
     }
+
+    .carousel-track {
+        padding: 0 20px;
+        display: flex;
+        height: 100%;
+
+        cursor: grab;
+        overflow-x: hidden;
+
+        & * {
+            height: 100%;
+        }
+
+        &.dragging {
+            cursor: grabbing;
+        }
+    }
 }
 
 @keyframes blink {
@@ -31,22 +48,6 @@
 
     50% {
         border-color: transparent;
-    }
-}
-
-.carousel-track {
-    padding: 0 20px;
-    display: flex;
-    height: 100%;
-    & * {
-        height: 100%;
-        aspect-ratio: initial;
-    }
-    cursor: grab;
-    overflow-x: hidden;
-
-    &.dragging {
-        cursor: grabbing;
     }
 }
 </style>
