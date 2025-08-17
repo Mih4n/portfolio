@@ -11,7 +11,7 @@
         <template #right v-if="addition">
             <MDC 
                 :value="addition" 
-                :tag="false" 
+                :tag="false"
             />
         </template>
     </Columns>

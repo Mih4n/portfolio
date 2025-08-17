@@ -24,7 +24,10 @@ watch(size.height, () => {
     updateLineCount();
 });
 
-onMounted(updateLineCount);
+onMounted(() => {
+        updateLineCount();
+    }
+);
 </script>
 
 <style lang="less" scoped>

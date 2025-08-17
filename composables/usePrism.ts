@@ -22,7 +22,9 @@ export const highlightAll = () => {
 }
 
 export const highlight = (element: Element) => {
-    Prism.highlightElement(element, true)
+
+    Prism.highlightElement(element)
+    console.log('highlighting element', element);
     element.querySelectorAll('[class*="brace-level-"]').forEach(processBraces);
 }
 

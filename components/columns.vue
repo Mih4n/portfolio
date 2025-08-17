@@ -1,12 +1,14 @@
 <template>
     <div class="columns">
         <div 
+            v-dragscroll
             v-if="showLeft"
             class="left column bg-0h" 
         >
             <slot name="left"></slot>
         </div>
         <div 
+            v-dragscroll
             v-if="showRight"
             class="right column bg"
         >

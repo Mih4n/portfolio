@@ -20,43 +20,50 @@
 	--color: var(--bg-0h);
 
 	width: 100%;
-    height: calc(2 * var(--code-line-height));
+	height: calc(2 * var(--code-line-height));
 
-    display: block;
-    overflow: auto;
-
-    position: relative;
+	display: flex;
+	overflow: hidden;
+	position: relative;
 
 	&::after,
 	&::before {
+		content: '';
 		top: 0;
 		width: 100px;
 		height: 100%;
 		position: absolute;
 
-		transition: background 0.5s cubic-bezier(1, 0, 0, 1);
+		background-color: var(--color);
+		transition: background-color 0.5s cubic-bezier(1, 0, 0, 1);
+
+		mask-image: linear-gradient(to right, black, transparent);
+		mask-repeat: no-repeat;
+		mask-size: 100% 100%;
 
 		z-index: 2;
 	}
 
 	&::after {
-		content: '';
 		right: 0;
-		background: linear-gradient(to left, var(--color), transparent);
+		mask-image: linear-gradient(to left, black, transparent);
 	}
 
 	&::before {
-		content: '';
 		left: 0;
-		background: linear-gradient(to right, var(--color), transparent);
 	}
 
 	.slider {
 		display: flex;
 		overflow: hidden;
 		height: 100%;
-
 		flex-shrink: 0;
+
+		&:hover {
+			.slide {
+				animation-play-state: paused;
+			}
+		}
 
 		.slide {
 			display: flex;
@@ -64,11 +71,11 @@
 			padding-left: 50px;
 			height: 100%;
 			flex-shrink: 0;
-
-			animation: 3s slide linear infinite;
+			animation: 20s slide linear infinite;
 		}
 	}
 }
+
 
 @keyframes slide {
 	0% {
@@ -76,7 +83,7 @@
 	}
 
 	100% {
-		transform: translateX(-50%);
+		transform: translateX(-100%);
 	}
 }
 </style>

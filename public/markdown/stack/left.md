@@ -12,7 +12,7 @@
                     Description = "A collection of technologies and tools I use in my projects.",
                     Stack = [
                         <loop>
-                            <img src="/img/stack/cs.svg" alt="C#" title="C#"> 
+                            <img src="/img/stack/cs.svg" alt="C#" title="C#">
                             <img src="/img/stack/dotnet.svg" alt=".NET" title=".NET">
                             <img src="/img/stack/css.svg" alt="CSS" title="CSS">
                             <img src="/img/stack/less.svg" alt="LESS" title="LESS">

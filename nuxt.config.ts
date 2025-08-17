@@ -7,7 +7,9 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@vueuse/nuxt",
     "@nuxtjs/mdc",
-    "@nuxtjs/sitemap"
+    "@nuxtjs/sitemap",
+
+    "nuxt-vue-dragscroll",
   ],
   app: {
     cdnURL: 'https://mih4n.xyz/',
