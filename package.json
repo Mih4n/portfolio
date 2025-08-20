@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "@nuxt/devtools": "^2.3.0",
+        "@nuxtjs/device": "^3.2.4",
         "@nuxtjs/mdc": "^0.17.2",
         "@nuxtjs/sitemap": "^7.2.9",
         "@pinia/nuxt": "^0.7.0",

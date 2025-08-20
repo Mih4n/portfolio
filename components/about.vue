@@ -15,3 +15,12 @@ const about = ref<Project | undefined>(undefined)
 useFetch<Project>("/api/projects/about")
     .then(response => about.value = response.data.value ?? undefined)
 </script>
+
+<style lang="less">
+.about {
+    width: 100%;
+    overflow: auto;
+
+    min-height: 736px;
+}
+</style>

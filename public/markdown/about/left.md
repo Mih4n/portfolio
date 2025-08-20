@@ -1,17 +1,19 @@
-<pre>
-    <code class="language-cs">
-        using Mih4n.About;
-        using Mih4n.Viewer;
+```csharp
+using Mih4n;
 
-        public class AboutViewer : IViewer&lt;About&gt;
+public class AboutViewer : IViewer<About>
+{
+    public About View()
+    {
+        return new About()
         {
-            public About View()
-                => new About()
-                {
-                    Nick = "Mih4n",
-                    Name = "Mikhail",
-                    Surname = "Loseu"
-                }
+            Nick = "Mih4n",
+            Name = "Mikhail",
+            Surname = "Loseu",
+            Motto = "It compiles? Ship it!",
+            FavoriteException = "NullReferenceException",
+            CoffeeConsumption = int.MaxValue
         }
-    </code>
-</pre>
+    }
+}
+```

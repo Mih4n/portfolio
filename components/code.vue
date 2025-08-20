@@ -17,9 +17,9 @@
     </Columns>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup>;
 defineProps<{
-  code?: string | null;
-  addition?: string | null;
+    code?: string | null;
+    addition?: string | null;
 }>();
 </script>

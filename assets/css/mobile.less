@@ -7,6 +7,9 @@
     }
 
     .not-orientation(@rules) {
+        @media (pointer: fine) {
+            @rules();
+        }
         @media screen and (orientation: landscape) {
             @rules();
         }

@@ -36,13 +36,21 @@ onMounted(() => {
 .container {
     display: flex;
     width: 100%;
-    height: 100%;
+
+    position: relative;
 }
 
 .line-numbers {
-    padding-left: 50px;
+    padding: 0 50px;
     display: flex;
     flex-direction: column;
+
+    top: 0;
+    left: 0;
+    position: sticky;
+
+    background-color: var(--bg-0h);
+
     #mobile.all({
         display: none;
     });
@@ -61,7 +69,7 @@ onMounted(() => {
         padding-left: 40px;
     });
 
-    height: fit-content;
-    padding: var(--three-lines) 0 var(--three-lines) 85px;
+    height: 100%;
+    padding: var(--three-lines) 0 var(--three-lines) 0;
 }
 </style>

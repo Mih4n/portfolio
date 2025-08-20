@@ -8,8 +8,8 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/mdc",
     "@nuxtjs/sitemap",
-
     "nuxt-vue-dragscroll",
+    "@nuxtjs/device",
   ],
   app: {
     cdnURL: 'https://mih4n.xyz/',
