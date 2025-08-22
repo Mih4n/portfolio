@@ -16,11 +16,6 @@ The architecture is based on **Vertical Slices**, providing modularity and simpl
 </div>
 <br>
 
-## Screenshots & Visuals
-
-<div class="flex column gap-50">
-</div>
-
 ## Project highlights
 - Consolidated data into a single platform for real estate agents.  
 - Improved service efficiency and user experience for agents and clients.  

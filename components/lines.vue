@@ -1,7 +1,9 @@
 <template>
     <div class="container" ref="container">
         <div class="line-numbers">
-            <span v-for="n in lineCount" :key="n">{{ n }}</span>
+            <div class="line-numbers-wrapper">
+                <span v-for="n in lineCount" :key="n">{{ n }}</span>
+            </div>
         </div>
         <div class="content" ref="content">
             <slot class="content"></slot>
@@ -36,11 +38,14 @@ onMounted(() => {
 .container {
     display: flex;
     width: 100%;
-
+    height: 100%;
     position: relative;
 }
 
 .line-numbers {
+    position: relative;
+    min-width: 121.6px;
+
     padding: 0 50px;
     display: flex;
     flex-direction: column;
@@ -54,6 +59,14 @@ onMounted(() => {
     #mobile.all({
         display: none;
     });
+
+    .line-numbers-wrapper {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+
+        top: 0;
+    }
 }
 
 .line-numbers span {
